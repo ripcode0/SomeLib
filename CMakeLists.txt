@@ -15,7 +15,7 @@ project(SOME VERSION 0.0.0 LANGUAGES C CXX)
 
 set(SOME_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(SOME_INC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
-option(SOME_EXPORT ON)
+option(SOME_EXPORT "Export Enable" ON)
 
 add_library(some STATIC src/some.h src/some.cpp)
 
