@@ -25,6 +25,8 @@ target_include_directories(some
     $<INSTALL_INTERFACE:include>
 )
 
+message(STATUS "[SOME] pure inc ${SOME_INC_DIR}")
+
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
     message("-------- no install")
 endif()
