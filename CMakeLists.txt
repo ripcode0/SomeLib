@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 project(some_main)
 
-add_library(some STATIC some.h some.cpp)
+add_library(some STATIC src/some.h src/some.cpp)
 
 install(TARGETS some
     LIBRARY DESTINATION lib
