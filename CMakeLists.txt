@@ -29,15 +29,16 @@ if(NOT DEFINED CMAKE_INSTALL_PREFIX)
     message("-------- no install")
 endif()
 
-get_directory_property(has_parent DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PARENT_DIRECTORY)
+# get_directory_property(has_parent DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PARENT_DIRECTORY)
 
-if(has_parent)
-    set(SOME_LIBRARIES some PARENT_SCOPE)
-    set(SOME_INCLUDE_DIR SOME_INC_DIR PARENT_SCOPE)
-endif()
+# if(has_parent)
+#     message(STATUS "[SOME] Has Parent")
+#     set(SOME_LIBRARIES some PARENT_SCOPE)
+#     set(SOME_INCLUDE_DIR SOME_INC_DIR PARENT_SCOPE)
+# endif()
 
 set(SOME_LIBRARIES some PARENT_SCOPE)
-set(SOME_INCLUDE_DIR SOME_INC_DIR PARENT_SCOPE)
+set(SOME_INCLUDE_DIR ${SOME_INC_DIR} PARENT_SCOPE)
 
 # install(TARGETS some
 #     LIBRARY DESTINATION lib
