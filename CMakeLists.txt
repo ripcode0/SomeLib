@@ -15,7 +15,7 @@ project(SOME VERSION 0.0.0 LANGUAGES C CXX)
 
 set(SOME_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(SOME_INC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
-
+option(SOME_EXPORT ON)
 
 add_library(some STATIC src/some.h src/some.cpp)
 
@@ -36,10 +36,10 @@ endif()
 #     set(SOME_LIBRARIES some PARENT_SCOPE)
 #     set(SOME_INCLUDE_DIR SOME_INC_DIR PARENT_SCOPE)
 # endif()
-
-set(SOME_LIBRARIES some PARENT_SCOPE)
-set(SOME_INCLUDE_DIR ${SOME_INC_DIR} PARENT_SCOPE)
-
+if(SOME_EXPORT)
+    set(SOME_LIBRARIES some PARENT_SCOPE)
+    set(SOME_INCLUDE_DIR ${SOME_INC_DIR} PARENT_SCOPE)
+endif()
 message(STATUS "[SOME] inc dir : ${SOME_INCLUDE_DIR}")
 
 # install(TARGETS some
