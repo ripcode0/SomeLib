@@ -45,9 +45,11 @@ if(SOME_EXPORT)
 endif()
 message(STATUS "[SOME] inc dir : ${SOME_INCLUDE_DIR}")
 
-# install(TARGETS some
-#     LIBRARY DESTINATION lib
-#     ARCHIVE DESTINATION lib
-# )
+install(TARGETS some
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+)
+
+install(DIRECTORY src/ DESTINATION include/some FILES_MATCHING PATTERN "*.h")
 
 # install(DIRECTORY src/ DESTINATION include)
