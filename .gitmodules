@@ -1,4 +1,8 @@
 [submodule "submodule"]
 	path = submodule
 	url = https://github.com/ripcode0/SubProject.git
+
+[submodule "submodules"]
+	path = submodules
+	url = https://github.com/ripcode0/SubProject.git
 	branch = v0.0.1

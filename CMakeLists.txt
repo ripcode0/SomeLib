@@ -1,44 +1,28 @@
 cmake_minimum_required(VERSION 3.22)
 
-#about warning PROJECT_VERSION
-cmake_policy(SET CMP0048 NEW)
+project(Some)
 
-#allow the IN LIST in IF()
-cmake_policy(SET CMP0057 NEW)
+add_library(Some STATIC src/some.h src/some.cpp) #lib 만 쓰는 라이브러리
 
-if(CMAKE_VERSION VERSION_GREATER 3.8)
-    #enalbe the IPO for cmake version that support it
-    cmake_policy(SET CMP0069 NEW)
-endif()
+#CMAKE_SOURCE_DIR = 루트 디렉토리 ${CMAKE_CURRENT_SOURCE_DIR}
+set(LIB_DIR ${CMAKE_SOURCE_DIR}/lib)
 
-project(SOME VERSION 0.0.0 LANGUAGES C CXX)
-
-set(SOME_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
-set(SOME_INC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
-option(SOME_EXPORT "Export Enable" ON)
-
-add_library(some STATIC src/some.h src/some.cpp)
-
-target_include_directories(some 
-    PUBLIC
-    $<BUILD_INTERFACE:${SOME_INC_DIR}>
-    $<INSTALL_INTERFACE:include>
+set_target_properties(Some PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY ${LIB_DIR}
+    ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${LIB_DIR}
+    ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${LIB_DIR}
 )
 
-message(STATUS "[SOME] pure inc ${SOME_INC_DIR}")
-
-if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-    message("-------- no install")
-endif()
+add_subdirectory(src)
 
 
-message(STATUS "[SOME] inc dir : ${SOME_INCLUDE_DIR}")
+#.1 구성단계
 
-install(TARGETS some
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-)
+# 2 제네레이트 단계
 
-install(DIRECTORY src/ DESTINATION include/some FILES_MATCHING PATTERN "*.h")
+# 3빌드 단계
 
-add_subdirectory(submodule/SubProject00)
+#optional
+# 4 install 단계
+
+# 5 테스트단계
