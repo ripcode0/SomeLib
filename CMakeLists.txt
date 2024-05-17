@@ -18,6 +18,6 @@ add_subdirectory(src ${CMAKE_BINARY_DIR}/Some)
 
 #add submodule
 
-add_subdirectory(submodule/SubProject00)
+#add_subdirectory(submodule/SubProject00)
 
 
