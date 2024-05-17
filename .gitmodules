@@ -1,0 +1,4 @@
+[submodule "submodule"]
+	path = submodule
+	url = https://github.com/ripcode0/SubProject.git
+	tag = v0.0.1

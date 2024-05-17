@@ -31,18 +31,7 @@ if(NOT DEFINED CMAKE_INSTALL_PREFIX)
     message("-------- no install")
 endif()
 
-# get_directory_property(has_parent DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PARENT_DIRECTORY)
 
-# if(has_parent)
-#     message(STATUS "[SOME] Has Parent")
-#     set(SOME_LIBRARIES some PARENT_SCOPE)
-#     set(SOME_INCLUDE_DIR SOME_INC_DIR PARENT_SCOPE)
-# endif()
-# if(SOME_EXPORT)
-#     message(STATUS "[SOME] SOME Export : ON")
-#     set(SOME_LIBRARIES some PARENT_SCOPE)
-#     set(SOME_INCLUDE_DIR ${SOME_INC_DIR} PARENT_SCOPE)
-# endif()
 message(STATUS "[SOME] inc dir : ${SOME_INCLUDE_DIR}")
 
 install(TARGETS some
@@ -52,4 +41,4 @@ install(TARGETS some
 
 install(DIRECTORY src/ DESTINATION include/some FILES_MATCHING PATTERN "*.h")
 
-# install(DIRECTORY src/ DESTINATION include)
+add_subdirectory(submodule/SubProject00)
