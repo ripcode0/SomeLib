@@ -16,6 +16,8 @@ set_target_properties(Some PROPERTIES
 
 add_subdirectory(src ${CMAKE_BINARY_DIR}/Some)
 
+set(wglad_LIB_DIR ${CMAKE_SOURCE_DIR}/lib)
+
 add_subdirectory(submodule/wglad)
 
 #add submodule
