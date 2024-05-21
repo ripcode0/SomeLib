@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\@ripcode\SomeLib\submodule\SubProject00\sub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\@ripcode\SomeLib\submodule\SubProject00\sub.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\@ripcode\SomeLib\submodule\SubProject00\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D2F4EA3B-C682-37B9-B53C-EBACA8CA2411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{93DABA30-32F3-3446-8AA0-4B60E427F930}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

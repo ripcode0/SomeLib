@@ -1,0 +1,4 @@
+C:/@ripcode/SomeLib/build/CMakeFiles/Some.dir
+C:/@ripcode/SomeLib/build/CMakeFiles/ALL_BUILD.dir
+C:/@ripcode/SomeLib/build/CMakeFiles/ZERO_CHECK.dir
+C:/@ripcode/SomeLib/build/submodule/SubProject00/CMakeFiles/sub.dir

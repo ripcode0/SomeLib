@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 
+
 project(Some)
 
 add_library(Some STATIC src/some.h src/some.cpp) #lib 만 쓰는 라이브러리
@@ -20,9 +21,14 @@ set(wglad_LIB_DIR ${CMAKE_SOURCE_DIR}/lib)
 
 add_subdirectory(submodule/wglad)
 
-#add submodule
-message("---- sub ${wglad_INC_DIR}")
-message("---- sub ${wglad_LIB_DIR}")
-#add_subdirectory(submodule/SubProject00)
+#add_subdirectory(src/Empty ${CMAKE_BINARY_DIR}/Empty)
+add_subdirectory(src/Empty)
+
+add_library(interface INTERFACE)
+
+
+add_subdirectory(src/Samples ${CMAKE_BINARY_DIR}/Sample)
+
+
 
 
